@@ -38,11 +38,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Photo Drop" id="qzc-1o-PWZ">
-                        <barButtonItem key="leftBarButtonItem" title="Reset" id="w2L-Lm-Xgh">
-                            <connections>
-                                <action selector="resetKnownDrops:" destination="p2B-CH-dcy" id="9T2-2g-X8n"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Drop" id="t0G-BJ-2Vk">
                             <connections>
                                 <action selector="dropPhoto:" destination="p2B-CH-dcy" id="0IL-jE-l5N"/>
