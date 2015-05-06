@@ -20,7 +20,7 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4O-TO-Rmq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
-                            <imageView hidden="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1S-r0-6vG">
+                            <imageView hidden="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1S-r0-6vG">
                                 <rect key="frame" x="55" y="136" width="491" height="406"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
                             </imageView>
@@ -38,6 +38,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Photo Drop" id="qzc-1o-PWZ">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="w2L-Lm-Xgh">
+                            <connections>
+                                <action selector="resetKnownDrops:" destination="p2B-CH-dcy" id="9T2-2g-X8n"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Drop" id="t0G-BJ-2Vk">
                             <connections>
                                 <action selector="dropPhoto:" destination="p2B-CH-dcy" id="0IL-jE-l5N"/>

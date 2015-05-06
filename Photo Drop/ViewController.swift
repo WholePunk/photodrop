@@ -99,6 +99,10 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
     }
     
+    @IBAction func resetKnownDrops(sender: AnyObject) {
+        self.seenExchangeKeys.removeAllObjects()
+    }
+    
     // MARK: - Drop a Photo
     
     @IBAction func dropPhoto(sender: AnyObject) {
