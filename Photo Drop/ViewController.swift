@@ -24,7 +24,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     var lastExchangeKeyFound: String?
     var lastExchangeLocationFound: CLLocation?
-    var seenExchangeKeys = NSMutableSet()
     var inExchange = false
     
     @IBOutlet weak var mapView: MKMapView!
@@ -62,45 +61,39 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
             if regionQuery == nil {
                 regionQuery = geofire?.queryWithRegion(region)
-            }
-            
-            regionQuery!.observeEventType(GFEventTypeKeyEntered, withBlock: { (key: String!, location: CLLocation!) in
-                if self.annotations[key] == nil {
+                
+                regionQuery!.observeEventType(GFEventTypeKeyEntered, withBlock: { (key: String!, location: CLLocation!) in
                     let annotation = Pin(key: key)
                     annotation.coordinate = location.coordinate
                     self.mapView.addAnnotation(annotation)
                     self.annotations[key] = annotation
-                }
-            })
+                })
+                
+                regionQuery!.observeEventType(GFEventTypeKeyExited, withBlock: { (key: String!, location: CLLocation!) -> Void in
+                    self.mapView.removeAnnotation(self.annotations[key])
+                    self.annotations[key] = nil
+                })
+                
+            }
             
-            regionQuery!.observeEventType(GFEventTypeKeyExited, withBlock: { (key: String!, location: CLLocation!) -> Void in
-                self.mapView.removeAnnotation(self.annotations[key])
-                self.annotations[key] = nil
-            })
             
             // We also want a query with an extremely limited span.  When a photo enters that region, we want to notify the user they can exchange.
             if foundQuery == nil {
                 foundQuery = geofire?.queryAtLocation(self.mapView.userLocation.location, withRadius: 0.05)
+                
+                foundQuery!.observeEventType(GFEventTypeKeyEntered, withBlock: { (key: String!, location: CLLocation!) -> Void in
+                    self.lastExchangeKeyFound = key
+                    self.lastExchangeLocationFound = location
+                    let foundAPhoto = UIAlertView(title: "You Found a Drop!", message: "You can view the photo by tapping exchange and providing a new photo.", delegate: self, cancelButtonTitle: "Not Here", otherButtonTitles: "Exchange")
+                    foundAPhoto.show()
+                })
+                
             } else {
                 foundQuery?.center = self.mapView.userLocation.location
             }
             
-            foundQuery!.observeEventType(GFEventTypeKeyEntered, withBlock: { (key: String!, location: CLLocation!) -> Void in
-                if !self.seenExchangeKeys.containsObject(key) {
-                    self.lastExchangeKeyFound = key
-                    self.lastExchangeLocationFound = location
-                    self.seenExchangeKeys.addObject(key)
-                    let foundAPhoto = UIAlertView(title: "You Found a Drop!", message: "You can view the photo by tapping exchange and providing a new photo.", delegate: self, cancelButtonTitle: "Not Here", otherButtonTitles: "Exchange")
-                    foundAPhoto.show()
-                }
-            })
-
         }
         
-    }
-    
-    @IBAction func resetKnownDrops(sender: AnyObject) {
-        self.seenExchangeKeys.removeAllObjects()
     }
     
     // MARK: - Drop a Photo
@@ -159,9 +152,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             let key = uniqueReference?.key
             let location = mapView.userLocation.location
             geofire!.setLocation(mapView.userLocation.location, forKey: key)
-            
-            self.seenExchangeKeys.addObject(key!)
-            
+                        
         }
 
     }
