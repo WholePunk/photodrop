@@ -37,7 +37,7 @@
                             <constraint firstItem="f61-xt-1Lz" firstAttribute="top" secondItem="Z1S-r0-6vG" secondAttribute="bottom" constant="58" id="wAs-XI-gAs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Photo Drop" prompt="Take a Photo, Leave a Photo" id="qzc-1o-PWZ">
+                    <navigationItem key="navigationItem" title="Photo Drop" id="qzc-1o-PWZ">
                         <barButtonItem key="rightBarButtonItem" title="Drop" id="t0G-BJ-2Vk">
                             <connections>
                                 <action selector="dropPhoto:" destination="p2B-CH-dcy" id="0IL-jE-l5N"/>
