@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qZn-rq-OJV">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Photo Drop-->
+        <scene sceneID="w09-5S-Pbb">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Photo Drop" id="p2B-CH-dcy" customClass="ViewController" customModule="Photo_Drop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="oxw-GO-gvE"/>
+                        <viewControllerLayoutGuide type="bottom" id="f61-xt-1Lz"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="BdL-JD-Ip6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t4O-TO-Rmq">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                            <imageView hidden="YES" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Z1S-r0-6vG">
+                                <rect key="frame" x="55" y="136" width="491" height="406"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f61-xt-1Lz" firstAttribute="top" secondItem="t4O-TO-Rmq" secondAttribute="bottom" id="0J8-O3-EYp"/>
+                            <constraint firstItem="Z1S-r0-6vG" firstAttribute="top" secondItem="oxw-GO-gvE" secondAttribute="bottom" constant="42" id="LNl-Nt-Sl9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Z1S-r0-6vG" secondAttribute="trailing" constant="38" id="Pzz-D7-VHv"/>
+                            <constraint firstItem="Z1S-r0-6vG" firstAttribute="leading" secondItem="BdL-JD-Ip6" secondAttribute="leadingMargin" constant="39" id="Sl6-MQ-jA6"/>
+                            <constraint firstItem="t4O-TO-Rmq" firstAttribute="leading" secondItem="BdL-JD-Ip6" secondAttribute="leadingMargin" constant="-16" id="i6Q-fd-Ik3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t4O-TO-Rmq" secondAttribute="trailing" constant="-16" id="rK4-nl-WpU"/>
+                            <constraint firstItem="t4O-TO-Rmq" firstAttribute="top" secondItem="BdL-JD-Ip6" secondAttribute="topMargin" id="sSx-l4-Uv7"/>
+                            <constraint firstItem="f61-xt-1Lz" firstAttribute="top" secondItem="Z1S-r0-6vG" secondAttribute="bottom" constant="58" id="wAs-XI-gAs"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Photo Drop" prompt="Take a Photo, Leave a Photo" id="qzc-1o-PWZ">
+                        <barButtonItem key="rightBarButtonItem" title="Drop" id="t0G-BJ-2Vk">
+                            <connections>
+                                <action selector="dropPhoto:" destination="p2B-CH-dcy" id="0IL-jE-l5N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="foundImage" destination="Z1S-r0-6vG" id="YFk-Ai-TGa"/>
+                        <outlet property="mapView" destination="t4O-TO-Rmq" id="v3x-z3-Vdo"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VnO-1c-n5G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="314" y="475"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Bsg-gb-RlW">
+            <objects>
+                <navigationController id="qZn-rq-OJV" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jPA-wf-8Cm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="p2B-CH-dcy" kind="relationship" relationship="rootViewController" id="PO3-Y1-SHs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFF-pY-6lS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="314" y="-297"/>
         </scene>
     </scenes>
 </document>
