@@ -90,7 +90,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                     self.lastExchangeKeyFound = key
                     self.lastExchangeLocationFound = location
                     self.seenExchangeKeys.addObject(key)
-                    let foundAPhoto = UIAlertView(title: "You Found a Drop!", message: "You can save the photo to your photo library by tapping exchange and providing a new photo.", delegate: self, cancelButtonTitle: "Not Here", otherButtonTitles: "Exchange")
+                    let foundAPhoto = UIAlertView(title: "You Found a Drop!", message: "You can view the photo by tapping exchange and providing a new photo.", delegate: self, cancelButtonTitle: "Not Here", otherButtonTitles: "Exchange")
                     foundAPhoto.show()
                 }
             })

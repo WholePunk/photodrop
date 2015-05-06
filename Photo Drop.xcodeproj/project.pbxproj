@@ -15,8 +15,6 @@
 		5F9E82291AF94CD400BB0E3C /* Photo_DropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E82281AF94CD400BB0E3C /* Photo_DropTests.swift */; };
 		5F9E82331AF94EAB00BB0E3C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E82321AF94EAB00BB0E3C /* MapKit.framework */; };
 		5F9E82351AF9503C00BB0E3C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E82341AF9503C00BB0E3C /* CoreLocation.framework */; };
-		5F9E82381AF9682F00BB0E3C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E82361AF9682E00BB0E3C /* Firebase.framework */; };
-		5F9E82391AF9682F00BB0E3C /* GeoFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E82371AF9682E00BB0E3C /* GeoFire.framework */; };
 		5F9E823B1AF96A0C00BB0E3C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E823A1AF96A0C00BB0E3C /* libicucore.dylib */; };
 		5F9E823D1AF96A1800BB0E3C /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E823C1AF96A1800BB0E3C /* libc++.dylib */; };
 		5F9E823F1AF96A2200BB0E3C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E823E1AF96A2200BB0E3C /* CFNetwork.framework */; };
@@ -26,6 +24,8 @@
 		5F9E824E1AF9713900BB0E3C /* UIImage+Alpha.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E824A1AF9713900BB0E3C /* UIImage+Alpha.m */; };
 		5F9E824F1AF9713900BB0E3C /* UIImage+RoundedCorner.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E824C1AF9713900BB0E3C /* UIImage+RoundedCorner.m */; };
 		5F9E82511AF97AB000BB0E3C /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9E82501AF97AB000BB0E3C /* Pin.swift */; };
+		5F9E82541AF9A1FD00BB0E3C /* GeoFire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E82521AF9A1FD00BB0E3C /* GeoFire.framework */; };
+		5F9E82551AF9A1FD00BB0E3C /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F9E82531AF9A1FD00BB0E3C /* Firebase.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +51,6 @@
 		5F9E82281AF94CD400BB0E3C /* Photo_DropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo_DropTests.swift; sourceTree = "<group>"; };
 		5F9E82321AF94EAB00BB0E3C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5F9E82341AF9503C00BB0E3C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		5F9E82361AF9682E00BB0E3C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
-		5F9E82371AF9682E00BB0E3C /* GeoFire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GeoFire.framework; sourceTree = "<group>"; };
 		5F9E823A1AF96A0C00BB0E3C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
 		5F9E823C1AF96A1800BB0E3C /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		5F9E823E1AF96A2200BB0E3C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -66,6 +64,8 @@
 		5F9E824B1AF9713900BB0E3C /* UIImage+RoundedCorner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCorner.h"; sourceTree = "<group>"; };
 		5F9E824C1AF9713900BB0E3C /* UIImage+RoundedCorner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCorner.m"; sourceTree = "<group>"; };
 		5F9E82501AF97AB000BB0E3C /* Pin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		5F9E82521AF9A1FD00BB0E3C /* GeoFire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GeoFire.framework; path = ../../../GeoFire.framework; sourceTree = "<group>"; };
+		5F9E82531AF9A1FD00BB0E3C /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Firebase.framework; path = ../../../Firebase.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,13 +74,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F9E82431AF96A2F00BB0E3C /* SystemConfiguration.framework in Frameworks */,
+				5F9E82551AF9A1FD00BB0E3C /* Firebase.framework in Frameworks */,
 				5F9E82411AF96A2900BB0E3C /* Security.framework in Frameworks */,
 				5F9E823F1AF96A2200BB0E3C /* CFNetwork.framework in Frameworks */,
 				5F9E823D1AF96A1800BB0E3C /* libc++.dylib in Frameworks */,
 				5F9E823B1AF96A0C00BB0E3C /* libicucore.dylib in Frameworks */,
 				5F9E82351AF9503C00BB0E3C /* CoreLocation.framework in Frameworks */,
-				5F9E82381AF9682F00BB0E3C /* Firebase.framework in Frameworks */,
-				5F9E82391AF9682F00BB0E3C /* GeoFire.framework in Frameworks */,
+				5F9E82541AF9A1FD00BB0E3C /* GeoFire.framework in Frameworks */,
 				5F9E82331AF94EAB00BB0E3C /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +129,8 @@
 				5F9E82161AF94CD400BB0E3C /* Main.storyboard */,
 				5F9E82191AF94CD400BB0E3C /* Images.xcassets */,
 				5F9E821B1AF94CD400BB0E3C /* LaunchScreen.xib */,
+				5F9E82521AF9A1FD00BB0E3C /* GeoFire.framework */,
+				5F9E82531AF9A1FD00BB0E3C /* Firebase.framework */,
 				5F9E82101AF94CD400BB0E3C /* Supporting Files */,
 				5F9E82441AF96A8000BB0E3C /* Photo Drop-Bridging-Header.h */,
 			);
@@ -144,8 +146,6 @@
 				5F9E824A1AF9713900BB0E3C /* UIImage+Alpha.m */,
 				5F9E824B1AF9713900BB0E3C /* UIImage+RoundedCorner.h */,
 				5F9E824C1AF9713900BB0E3C /* UIImage+RoundedCorner.m */,
-				5F9E82361AF9682E00BB0E3C /* Firebase.framework */,
-				5F9E82371AF9682E00BB0E3C /* GeoFire.framework */,
 				5F9E82111AF94CD400BB0E3C /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -405,6 +405,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Photo",
 					Drop,
+					/Users/warwick/Desktop,
 				);
 				INFOPLIST_FILE = "Photo Drop/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -425,6 +426,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Photo",
 					Drop,
+					/Users/warwick/Desktop,
 				);
 				INFOPLIST_FILE = "Photo Drop/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -488,6 +490,7 @@
 				5F9E822E1AF94CD400BB0E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5F9E822F1AF94CD400BB0E3C /* Build configuration list for PBXNativeTarget "Photo DropTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +499,7 @@
 				5F9E82311AF94CD400BB0E3C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
